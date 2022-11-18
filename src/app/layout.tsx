@@ -16,7 +16,7 @@ export default async function RootLayout({
     <html>
       <body>
         {/* <FetchInitializer basePath={appData.basePath} /> */}
-        <header>Some Blog</header>
+        <header>Some device</header>
         {children}
       </body>
     </html>

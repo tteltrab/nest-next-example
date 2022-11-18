@@ -18,7 +18,7 @@
     "start:docker": "docker run --rm -p 3000:3000 -p 7655:22 -it $(docker build --build-arg ssh_pub_key=\"$(cat ~/.ssh/id_rsa.pub)\" -q .)",
     "start:ssh": "ssh -o StrictHostKeyChecking=no -L 9221:localhost:9229 root@localhost -p 7655",
     "start:prod": "node dist/main",
-    "start:proxy": "docker run --name nest-next-blog-proxy -v $(pwd)/nginx.conf:/etc/nginx/conf.d/default.conf:ro --add-host localnode:$(ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}') -p 8080:8080 -d nginx",
+    "start:proxy": "docker run --name nest-next-device-proxy -v $(pwd)/nginx.conf:/etc/nginx/conf.d/default.conf:ro --add-host localnode:$(ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}') -p 8080:8080 -d nginx",
     "lint": "eslint \"{src,apps,libs,test}/**/*.tsx?\" --fix"
   },
   "dependencies": {

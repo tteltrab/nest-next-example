@@ -33,19 +33,19 @@ export class AppController {
   @Get(':id')
   @Render('[id]')
   @UseInterceptors(ParamsInterceptor)
-  public blogPost() {
-    console.log('blogpost controller');
+  public device() {
+    console.log('device controller');
     return {};
   }
 
-  @Get('/api/blog-posts')
-  public listBlogPosts() {
-    return this.appService.getBlogPosts();
+  @Get('/api/devices')
+  public listdevices() {
+    return this.appService.getDevices();
   }
 
-  @Get('/api/blog-posts/:id')
-  public getBlogPostById(@Param('id', new ParseIntPipe()) id: number) {
-    return this.appService.getBlogPost(id);
+  @Get('/api/devices/:id')
+  public getDeviceById(@Param('id', new ParseIntPipe()) id: number) {
+    return this.appService.getDevice(id);
   }
 
   @Get('/api/app-data/')
